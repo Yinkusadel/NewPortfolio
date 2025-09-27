@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Experience() {
   return (
     <div className="py-20" id="testimonials">
-      <h1 className="heading">
+      <h1 className="heading text-white">
         My
         <span className="text-purple"> work experience</span>
       </h1>

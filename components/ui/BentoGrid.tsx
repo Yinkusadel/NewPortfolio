@@ -47,8 +47,8 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["ReactJS", "Express", "Typescript"];
-  const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
+  const leftLists = ["Next.js", "React", "TypeScript"];
+  const rightLists = ["VueJS", "Express", "PostgreSQL"];
 
   const [copied, setCopied] = useState(false);
 
@@ -70,7 +70,7 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "row-span-1 relative overflow-hidden rounded-3xl border border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4",
+        "row-span-1 relative overflow-hidden rounded-3xl border border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4 text-white",
         className
       )}
       style={{
@@ -90,9 +90,8 @@ export const BentoGridItem = ({
           )}
         </div>
         <div
-          className={`absolute right-0 -bottom-5 ${
-            id === 5 && "w-full opacity-80"
-          } `}
+          className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-80"
+            } `}
         >
           {spareImg && (
             <img
@@ -156,9 +155,8 @@ export const BentoGridItem = ({
           {id === 6 && (
             <div className="mt-5 relative">
               <div
-                className={`absolute -bottom-5 right-0 ${
-                  copied ? "block" : "block"
-                }`}
+                className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"
+                  }`}
               >
                 <Lottie options={defaultOptions} height={200} width={400} />
               </div>

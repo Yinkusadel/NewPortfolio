@@ -3,10 +3,11 @@ import { projects } from "@/data";
 import { PinContainer } from "./ui/3d-pin";
 import { FaLocationArrow } from "react-icons/fa";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function RecentProjects() {
   return (
-    <div className="py-20" id="projects">
+    <div className="py-20 text-white" id="projects">
       <h1 className="heading">
         A small selection of{" "}
         <span className="text-purple">recent projects</span>
@@ -14,8 +15,11 @@ export default function RecentProjects() {
 
       <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
         {projects.map(({ id, title, des, img, iconLists, link }) => (
-          <div
+          <Link
+            href={link}
             key={id}
+            target="_blank"
+            rel="noopener noreferrer"
             className="sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[80vw]"
           >
             <PinContainer title={link} href={link}>
@@ -34,7 +38,7 @@ export default function RecentProjects() {
                 {title}
               </h1>
 
-              <p className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2">
+              <p className="lg:text-xl lg:font-normal font-light text-sm line-clamp-3">
                 {des}
               </p>
 
@@ -61,7 +65,7 @@ export default function RecentProjects() {
                 </div>
               </div>
             </PinContainer>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
