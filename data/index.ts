@@ -94,14 +94,15 @@ export const projects = [
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
     link: "https://notetaker-two-alpha.vercel.app/",
   },
-  // {
-  //   id: 4,
-  //   title: "Animated Apple Iphone 3D Website",
-  //   des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-  //   img: "/p4.svg",
-  //   iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-  //   link: "https://github.com/Yinkusadel",
-  // },
+  {
+    id: 4,
+    title: "Talsent Screen AI",
+    des: "An intelligent resume scanner app built with Puter and React Router. It analyzes uploaded resumes using AI to extract key information, evaluate skills, and generate actionable insights for recruiters and job seekers.",
+    img: "/p4.png",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", ],
+    link: "https://talent-screen-ai-two.vercel.app/",
+  }
+
 ];
 
 export const testimonials = [
@@ -138,7 +139,7 @@ export const workExperience = [
 
   {
     id: 2,
-   title: "Software Engineer – AdejamTech",
+    title: "Software Engineer – AdejamTech",
     desc: "Worked on multiple web projects, implementing robust features and optimizing performance for client applications.",
     className: "md:col-span-2",
     thumbnail: "/exp2.svg",
