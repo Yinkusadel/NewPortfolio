@@ -15,6 +15,7 @@ export default function Grid() {
                 description={description}
                 className={className}
                 img={img}
+                imgClassName={imgClassName}
                 titleClassName={titleClassName}
                 spareImg={spareImg}
                 />
