@@ -1,13 +1,50 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 import dynamic from "next/dynamic";
+import { createPortal } from "react-dom";
 
 const World = dynamic(() => import("./Globe").then((m) => m.World), {
   ssr: false,
 });
 
 export function GlobeDemo() {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { amount: 0.6 });
+  const [hint, setHint] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const [anchor, setAnchor] = useState<{ top: number; left: number } | null>(
+    null
+  );
+
+  // the card clips its children, so the tooltip is portalled out and pinned
+  // to the card's top edge in page coordinates
+  useEffect(() => {
+    const card = ref.current?.closest("[data-bento-card]");
+    if (!card) return;
+    const measure = () => {
+      const r = card.getBoundingClientRect();
+      setAnchor({
+        top: r.top + window.scrollY,
+        left: r.left + window.scrollX + r.width / 2,
+      });
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [hint, hovered]);
+
+  // pop the tooltip up whenever the globe scrolls into view, then tuck it away
+  useEffect(() => {
+    if (!inView) {
+      setHint(false);
+      return;
+    }
+    setHint(true);
+    const timer = setTimeout(() => setHint(false), 5000);
+    return () => clearTimeout(timer);
+  }, [inView]);
+
   const globeConfig = {
     pointSize: 4,
     globeColor: "#062056",
@@ -28,7 +65,7 @@ export function GlobeDemo() {
     maxRings: 3,
     initialPosition: { lat: 22.3193, lng: 114.1694 },
     autoRotate: true,
-    autoRotateSpeed: 0.5,
+    autoRotateSpeed: 1,
   };
   const colors = ["#06b6d4", "#3b82f6", "#6366f1"];
   const sampleArcs = [
@@ -395,7 +432,42 @@ export function GlobeDemo() {
   ];
 
   return (
-    <div className="flex items-center justify-center absolute  -left-5 top-36 md:top-40 w-full h-full ">
+    <div
+      ref={ref}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="flex items-center justify-center absolute  -left-5 top-36 md:top-40 w-full h-full "
+    >
+      {anchor &&
+        createPortal(
+          <div
+            className="pointer-events-none absolute z-[100]"
+            style={{
+              top: anchor.top + 12,
+              left: anchor.left,
+              transform: "translate(-50%, -100%)",
+            }}
+          >
+            <motion.div
+              initial={false}
+              animate={{
+                opacity: hint || hovered ? 1 : 0,
+                y: hint || hovered ? 0 : 8,
+              }}
+              transition={{ duration: 0.5 }}
+              className="relative flex items-center gap-3 rounded-2xl bg-zinc-950 py-1.5 px-4 ring-1 ring-white/10 shadow-xl"
+            >
+              <span className="text-white text-xs font-bold whitespace-nowrap">
+                Hold &amp; drag to play with the globe
+              </span>
+              <span className="text-3xl leading-none" aria-hidden>
+                😅
+              </span>
+              <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0"></span>
+            </motion.div>
+          </div>,
+          document.body
+        )}
       <div className="max-w-7xl mx-auto w-full relative overflow-hidden px-4 h-96">
         <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white z-40" />
         <div className="absolute w-full h-72 md:h-full z-10">
