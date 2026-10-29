@@ -71,6 +71,14 @@ export const gridItems = [
 
 export const projects = [
   {
+    id: 6,
+    title: "Flolyt - AI Revenue Leakage Workspace",
+    des: "A conversational workspace that helps businesses find and recover lost revenue. Built with React, TypeScript, TailwindCSS, TanStack Query and Radix UI, with a Leakage Map, collaborative Rooms, an Inbox, Playbooks and business memory.",
+    img: "/p6.png",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg"],
+    link: "https://flolyt-workspace-version-git-fc0935-olayinkas-projects-e863e0fc.vercel.app/",
+  },
+  {
     id: 1,
     title: "StoreIt",
     des: "A modern file storage app using Next.js, Appwrite, TailwindCSS, and Radix UI for seamless file management.",
@@ -87,12 +95,12 @@ export const projects = [
     link: "https://adel-meets.vercel.app/",
   },
   {
-    id: 3,
-    title: "NoteTaker - Full-Stack Note-Taking App",
-    des: "A modern full-stack Note Taker app with Markdown support, secure authentication, and real-time data management using Next.js, Prisma, tRPC, and TailwindCSS.",
-    img: "/p3.png",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "https://notetaker-two-alpha.vercel.app/",
+    id: 5,
+    title: "Finance - Personal Finance Dashboard",
+    des: "A full-stack personal finance dashboard built with Next.js, TypeScript, TailwindCSS, Hono, Drizzle ORM (Postgres), and Clerk auth. Track income, expenses, and balance across accounts with Recharts charts, category breakdowns, and CSV import.",
+    img: "/p5.png",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
+    link: "https://finance-app-lovat-kappa.vercel.app/",
   },
   {
     id: 4,
@@ -103,12 +111,12 @@ export const projects = [
     link: "https://talent-screen-ai-two.vercel.app/",
   },
   {
-    id: 5,
-    title: "Finance - Personal Finance Dashboard",
-    des: "A full-stack personal finance dashboard built with Next.js, TypeScript, TailwindCSS, Hono, Drizzle ORM (Postgres), and Clerk auth. Track income, expenses, and balance across accounts with Recharts charts, category breakdowns, and CSV import.",
-    img: "/p5.png",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
-    link: "https://finance-app-lovat-kappa.vercel.app/",
+    id: 3,
+    title: "NoteTaker - Full-Stack Note-Taking App",
+    des: "A modern full-stack Note Taker app with Markdown support, secure authentication, and real-time data management using Next.js, Prisma, tRPC, and TailwindCSS.",
+    img: "/p3.png",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
+    link: "https://notetaker-two-alpha.vercel.app/",
   },
 ];
 
@@ -135,6 +143,14 @@ export const testimonials = [
 ];
 
 export const workExperience = [
+  {
+    id: 5,
+    title: "Founding Frontend Engineer – Flolyt",
+    desc: "Building the Flolyt workspace from the ground up, owning the frontend architecture and shipping features across the product.",
+    className: "lg:col-span-4",
+    thumbnail: "/exp2.svg",
+  },
+
   {
     id: 1,
     title: "Full-Stack Engineer – Codetratives",
