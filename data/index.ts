@@ -101,15 +101,8 @@ export const projects = [
     img: "/p4.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", ],
     link: "https://talent-screen-ai-two.vercel.app/",
-  },
-  {
-    id: 5,
-    title: "Finance - Personal Finance Dashboard",
-    des: "A full-stack personal finance dashboard built with Next.js, TypeScript, TailwindCSS, Hono, Drizzle ORM (Postgres), and Clerk auth. Track income, expenses, and balance across accounts with Recharts charts, category breakdowns, and CSV import.",
-    img: "/p5.png",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
-    link: "https://finance-app-lovat-kappa.vercel.app/",
-  },
+  }
+
 ];
 
 export const testimonials = [
