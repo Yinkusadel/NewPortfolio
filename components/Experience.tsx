@@ -30,6 +30,11 @@ export default function Experience() {
               />
 
               <div className="lg:ms-5">
+                {card.date && (
+                  <p className="text-start text-xs md:text-sm font-semibold tracking-wider uppercase text-purple mb-2">
+                    {card.date}
+                  </p>
+                )}
                 <h1 className="text-start text-xl md:text-2xl font-bold">
                   {card.title}
                 </h1>

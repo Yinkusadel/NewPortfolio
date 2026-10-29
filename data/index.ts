@@ -146,7 +146,8 @@ export const workExperience = [
   {
     id: 5,
     title: "Founding Frontend Engineer – Flolyt",
-    desc: "Building the Flolyt workspace from the ground up, owning the frontend architecture and shipping features across the product.",
+    date: "Dec 2025 – Present",
+    desc: "Leading end-to-end frontend development of an AI-powered customer engagement platform built with React (Vite) and TypeScript, from the dashboard and segmentation to an AI Workflow Studio.",
     className: "lg:col-span-4",
     thumbnail: "/exp2.svg",
   },
@@ -154,6 +155,7 @@ export const workExperience = [
   {
     id: 1,
     title: "Full-Stack Engineer – Codetratives",
+    date: "Dec 2024 – Dec 2025",
     desc: "Designed, developed, and maintained full-stack web applications using modern frontend and backend technologies.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
@@ -171,6 +173,7 @@ export const workExperience = [
   {
     id: 3,
     title: "Full-Stack Engineer – Freelance",
+    date: "May 2023 – Dec 2024",
     desc: "Led end-to-end development of client projects, from concept to deployment, using modern web and mobile technologies.",
     className: "md:col-span-2",
     thumbnail: "/exp3.svg",
@@ -179,6 +182,7 @@ export const workExperience = [
   {
     id: 4,
     title: "Frontend Engineer – Teckciphers",
+    date: "May 2018 – Sep 2022",
     desc: "Built and enhanced interactive web interfaces using React.js, improving user engagement and responsiveness.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
