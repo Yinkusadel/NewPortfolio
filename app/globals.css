@@ -87,3 +87,34 @@
     background: linear-gradient(90deg, #161a31 0%, #06091f 100%);
   }
 }
+
+
+/* the animated button border is a real border (a conic gradient whose angle is
+   animated), so there is no clipped spinning layer to glitch by a pixel */
+@property --magic-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes magic-spin {
+  to {
+    --magic-angle: 360deg;
+  }
+}
+
+@layer components {
+  .magic-border {
+    border: 1px solid transparent;
+    background:
+      linear-gradient(#020617, #020617) padding-box,
+      conic-gradient(
+          from calc(90deg + var(--magic-angle)) at 50% 50%,
+          #e2cbff 0%,
+          #393bb2 50%,
+          #e2cbff 100%
+        )
+        border-box;
+    animation: magic-spin 2s linear infinite;
+  }
+}
