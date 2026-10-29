@@ -100,8 +100,16 @@ export const StageLights = () => {
 
       <div
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-20 overflow-hidden mix-blend-screen transition-opacity duration-[1200ms]"
-        style={{ opacity: on && ready ? 1 : 0 }}
+        className="pointer-events-none fixed inset-0 z-20 overflow-hidden mix-blend-screen"
+        // once faded out, hide it for real so a full-screen blend layer
+        // isn't composited over the page (and its buttons) while off
+        style={{
+          opacity: on && ready ? 1 : 0,
+          visibility: on && ready ? "visible" : "hidden",
+          transition: on
+            ? "opacity 1200ms, visibility 0s"
+            : "opacity 1200ms, visibility 0s linear 1200ms",
+        }}
       >
         {beams.map((beam, i) => {
           const pose = poses[i];
