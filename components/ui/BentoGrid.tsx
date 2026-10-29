@@ -9,6 +9,7 @@ const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
 import { cn } from "@/lib/utils";
 
 import { BackgroundGradientAnimation } from "./GradientBg";
+import { GlobeDemo } from "./GridGlobe";
 import animationData from "@/data/confetti.json";
 import MagicButton from "./MagicButton";
 
@@ -72,6 +73,7 @@ export const BentoGridItem = ({
 
   return (
     <div
+      data-bento-card
       className={cn(
         "row-span-1 relative overflow-hidden rounded-3xl border border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4 text-white",
         className
@@ -126,6 +128,7 @@ export const BentoGridItem = ({
             {title}
           </div>
 
+          {id === 2 && <GlobeDemo />}
 
           {id === 3 && (
             <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
