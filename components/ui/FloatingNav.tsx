@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import SocialLinks from "./SocialLinks";
 
 export const FloatingNav = ({
   navItems,
@@ -72,6 +73,8 @@ export const FloatingNav = ({
             <span className="text-sm !cursor-pointer">{navItem.name}</span>
           </Link>
         ))}
+        <span className="hidden md:block h-5 w-px bg-white/20" />
+        <SocialLinks size="sm" className="hidden md:flex" />
       </motion.div>
     </AnimatePresence>
   );
