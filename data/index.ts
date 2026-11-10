@@ -118,6 +118,14 @@ export const projects = [
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
     link: "https://notetaker-two-alpha.vercel.app/",
   },
+  {
+    id: 7,
+    title: "EWURABA - 3D Snake Game",
+    des: "A futuristic 3D snake game where you play a naga gliding through a bioluminescent cyber-garden. Built with React, TypeScript and Three.js, with power-ups, spreading thorn hazards, combo scoring, touch controls, adaptive quality and a soundtrack generated entirely with the Web Audio API.",
+    img: "/p7.png",
+    iconLists: ["/re.svg", "/ts.svg", "/three.svg"],
+    link: "https://snake-game-ashy-seven.vercel.app",
+  },
 ];
 
 export const testimonials = [
