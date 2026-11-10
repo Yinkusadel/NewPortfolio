@@ -126,6 +126,30 @@ export const projects = [
     iconLists: ["/re.svg", "/ts.svg", "/three.svg"],
     link: "https://snake-game-ashy-seven.vercel.app",
   },
+  {
+    id: 8,
+    title: "ClinEase - Burnout Relief for Healthcare Workers",
+    des: "Landing page for a burnout-relief app built for nurses, doctors and healthcare professionals, with fast 2-5 minute relaxation sessions for stressful shifts. Built with React, TypeScript and TailwindCSS, with a waitlist, light and dark themes and animated sections.",
+    img: "/p8.png",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg"],
+    link: "https://www.clineaseapp.com/",
+  },
+  {
+    id: 9,
+    title: "AgentPesa - Voice-First AI Banking",
+    des: "Landing page for a voice-first AI banking app that lets Nigerians send money, pay bills and check balances by talking or typing in English, Pidgin, Yoruba, Igbo or Hausa. Includes app store links, a waitlist popup, FAQ and contact pages.",
+    img: "/p9.png",
+    iconLists: [],
+    link: "https://agentpesa.ai/",
+  },
+  {
+    id: 10,
+    title: "TraQFit - Personal Trainer Dashboard",
+    des: "A fitness training platform for personal trainers to manage clients, assign workouts, track progress and send messages. Built with Next.js, TypeScript, TailwindCSS and Supabase, with PDF progress reports, nutrition data from USDA FoodData Central and QR referral links.",
+    img: "/p10.png",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
+    link: "https://trainer.traqfit.net/",
+  },
 ];
 
 export const testimonials = [
